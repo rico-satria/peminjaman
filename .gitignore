@@ -1,0 +1,14 @@
+# Konfigurasi lokal/produksi berisi kredensial database
+config.php
+
+# File pemulihan dan diagnostik sementara
+reset-admin.php
+diagnosa-login.php
+install.lock
+
+# Session, log, dan berkas sistem
+peminjaman_sessions/
+*.log
+.DS_Store
+Thumbs.db
+

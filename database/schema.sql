@@ -1,0 +1,15 @@
+SET FOREIGN_KEY_CHECKS=0;
+DROP TABLE IF EXISTS audit_logs; DROP TABLE IF EXISTS loans; DROP TABLE IF EXISTS assets; DROP TABLE IF EXISTS users;
+SET FOREIGN_KEY_CHECKS=1;
+CREATE TABLE users(id INT AUTO_INCREMENT PRIMARY KEY,name VARCHAR(100) NOT NULL,username VARCHAR(50) NOT NULL UNIQUE,password VARCHAR(255) NOT NULL,role ENUM('admin','petugas','waka','kepala_tu','peminjam') NOT NULL,unit VARCHAR(100),active TINYINT(1) DEFAULT 1,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP) ENGINE=InnoDB;
+CREATE TABLE assets(id INT AUTO_INCREMENT PRIMARY KEY,asset_code VARCHAR(40) UNIQUE NOT NULL,bmn_number VARCHAR(80),name VARCHAR(120) NOT NULL,category VARCHAR(50),brand VARCHAR(80),serial_number VARCHAR(80),location VARCHAR(100),condition_status ENUM('baik','rusak_ringan','rusak_berat','perawatan') DEFAULT 'baik',availability ENUM('tersedia','dipesan','dipinjam','perawatan','nonaktif') DEFAULT 'tersedia',completeness TEXT,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP) ENGINE=InnoDB;
+CREATE TABLE loans(id INT AUTO_INCREMENT PRIMARY KEY,loan_no VARCHAR(40) UNIQUE NOT NULL,user_id INT NOT NULL,asset_id INT NOT NULL,loan_type ENUM('sementara','jangka_panjang') NOT NULL,purpose TEXT NOT NULL,start_date DATE NOT NULL,due_date DATE NOT NULL,status ENUM('menunggu','disetujui','ditolak','dipinjam','terlambat','dikembalikan') DEFAULT 'menunggu',approver_note TEXT,checkout_condition TEXT,return_condition TEXT,approved_by INT NULL,checkout_at DATETIME NULL,returned_at DATETIME NULL,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(user_id) REFERENCES users(id),FOREIGN KEY(asset_id) REFERENCES assets(id),FOREIGN KEY(approved_by) REFERENCES users(id)) ENGINE=InnoDB;
+CREATE TABLE audit_logs(id BIGINT AUTO_INCREMENT PRIMARY KEY,user_id INT NULL,action VARCHAR(100) NOT NULL,details TEXT,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP) ENGINE=InnoDB;
+INSERT INTO assets(asset_code,bmn_number,name,category,brand,serial_number,location,availability,completeness) VALUES
+('LAP-001','3.10.01.02.001','Laptop Lenovo ThinkPad','Laptop','Lenovo','PF4-L001','Ruang Sarpras','dipinjam','Tas, charger, mouse'),
+('LAP-002','3.10.01.02.002','Laptop ASUS ExpertBook','Laptop','ASUS','ASU-L002','Ruang Sarpras','tersedia','Tas dan charger'),
+('IFO-001','3.10.02.01.001','Infocus Epson EB-X06','Infocus','Epson','EPS-I001','Ruang Sarpras','dipinjam','Tas, kabel daya, HDMI, remote'),
+('IFO-002','3.10.02.01.002','Infocus BenQ MX550','Infocus','BenQ','BEN-I002','Ruang Sarpras','tersedia','Tas, kabel daya, HDMI, remote'),
+('PRN-001','3.10.01.01.001','Printer Epson L3250','Printer','Epson','EPS-P001','Ruang Sarpras','dipesan','Kabel daya dan USB'),
+('CAM-001','3.10.05.01.001','Kamera Canon EOS 1500D','Kamera','Canon','CAN-C001','Ruang Sarpras','tersedia','Tas, lensa kit, baterai, charger'),
+('SPK-001','3.10.06.01.001','Speaker Portable JBL','Audio','JBL','JBL-S001','Ruang Sarpras','perawatan','Kabel daya dan mikrofon');

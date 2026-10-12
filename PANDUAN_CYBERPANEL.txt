@@ -1,0 +1,26 @@
+PEMINJAMAN BARANG SMK SMTI PADANG - PANDUAN CYBERPANEL
+========================================================
+
+Database yang sudah dikonfigurasi:
+- Host     : localhost
+- Port     : 3306
+- Database : pemi_peminjaman_bmn
+- Username : pemi_peminjaman_app
+
+LANGKAH INSTALASI
+1. Ekstrak seluruh isi folder aplikasi ke public_html domain/subdomain.
+   Pastikan index.php berada langsung di public_html, bukan di dalam folder ganda.
+2. Buka File Manager CyberPanel, lalu edit config.php.
+3. Ganti teks GANTI_DENGAN_PASSWORD_DATABASE dengan password database yang dibuat di CyberPanel.
+   Pertahankan tanda kutip tunggal di kiri dan kanannya.
+4. Pilih PHP 8.2 untuk domain/subdomain.
+5. Buka https://DOMAIN-ANDA/install.php lalu klik Instal Aplikasi.
+6. Setelah berhasil, buka halaman login dan uji akun administrator.
+7. Hapus atau ganti nama install.php setelah instalasi selesai.
+8. Ganti seluruh password akun contoh sebelum aplikasi digunakan secara nyata.
+
+CATATAN
+- Installer hanya memakai database yang sudah dibuat di CyberPanel.
+- Installer tidak membuat database baru.
+- Installer menolak dijalankan kembali jika tabel aplikasi sudah ada.
+- Jangan mengunggah paket dengan config.php yang sudah berisi password ke tempat publik.
