@@ -108,11 +108,11 @@ try {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Instalasi Peminjaman Barang</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/style.css?v=20261013-warm2">
 </head>
 <body class="login-body">
 <main class="login-card">
-    <div class="brand-mark">S</div>
+    <img class="login-logo" src="assets/logo-smti-padang.png" alt="Logo SMK SMTI Padang" width="96" height="96">
     <h1>Instalasi Aplikasi</h1>
     <h2>SMK SMTI Padang</h2>
 
