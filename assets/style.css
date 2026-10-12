@@ -1301,3 +1301,22 @@ details {
 }
 .login-card .primary { background: #28705a; border-radius: 11px; }
 .login-card .primary:hover { background: #205e4b; }
+
+/* Logo dirender sebagai gambar asli agar tidak berkedip saat navigasi. */
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  display: block;
+  object-fit: contain;
+}
+.login-logo {
+  width: 96px;
+  height: 96px;
+  display: block;
+  object-fit: contain;
+  margin: 0 auto 16px;
+}
+@media (max-width: 560px) {
+  .login-logo { width: 82px; height: 82px; }
+}
