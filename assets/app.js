@@ -1,6 +1,6 @@
 const premiumStyles = document.createElement("link");
 premiumStyles.rel = "stylesheet";
-premiumStyles.href = "assets/premium.css";
+premiumStyles.href = "assets/premium.css?v=20261013-warm";
 document.head.appendChild(premiumStyles);
 
 function filterRows(query) {
