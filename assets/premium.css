@@ -673,3 +673,127 @@ summary {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* Pilihan 2 — Sekolah Hangat */
+:root {
+  --navy: #244f43;
+  --navy2: #2f6857;
+  --blue: #28705a;
+  --gold: #e9b85b;
+  --bg: #f7f2e9;
+  --text: #26342f;
+  --muted: #747e77;
+  --border: #e5dbcd;
+  --green: #28705a;
+  --red: #b5484f;
+  --orange: #a66a18;
+  --purple: #77588a;
+  --shadow: 0 8px 26px rgba(91, 72, 45, 0.08);
+}
+
+body { background: var(--bg); color: var(--text); }
+button:focus-visible, a:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible, summary:focus-visible {
+  box-shadow: 0 0 0 3px rgba(40, 112, 90, 0.2);
+}
+.sidebar {
+  background: linear-gradient(180deg, #214f42 0%, #173d33 100%);
+  border-right-color: rgba(255,255,255,.09);
+}
+.brand { border-bottom-color: rgba(255,255,255,.14); }
+.brand-mark { border-radius: 13px; }
+.brand span, .sidebar-note p { color: #c7d7cf; }
+.nav-item { color: #d2dfd9; border-radius: 11px; }
+.nav-item > span { color: #a9c2b7; }
+.nav-item:hover { background: rgba(255,255,255,.07); }
+.nav-item.active {
+  background: rgba(244, 218, 165, .15);
+  border-color: rgba(244, 218, 165, .15);
+}
+.nav-item.active > span { color: #f0c66f; }
+.nav-item > b { background: #efbd5f; color: #254d40; }
+.sidebar-note { border-radius: 13px; background: rgba(255,255,255,.055); }
+.sidebar-note span { color: #f0c66f; }
+
+.topbar {
+  background: rgba(255,253,249,.93);
+  border-bottom-color: var(--border);
+}
+.topbar h1, .profile strong { color: #253d35; }
+.eyebrow { color: var(--green); }
+.icon-btn, .menu-toggle { border-radius: 11px; background: #fffdfa; color: #285849; }
+.icon-btn:hover, .menu-toggle:hover { background: #f6f0e7; border-color: #d9cdbd; }
+.avatar { border-radius: 50%; background: #e4efe8; color: #28604d; }
+.profile-menu { border-radius: 13px; border-color: var(--border); box-shadow: 0 18px 46px rgba(73,55,32,.15); }
+
+.content { padding-top: 26px; }
+.welcome {
+  border: 1px solid #e6d3ad;
+  border-radius: 21px;
+  background: linear-gradient(135deg, #eed8aa 0%, #f6e8cf 58%, #fbf4e9 100%);
+  color: #254b3e;
+  box-shadow: 0 16px 38px rgba(91,72,45,.1);
+}
+.welcome:after {
+  border-color: rgba(41,93,75,.1);
+  box-shadow: 0 0 0 48px rgba(41,93,75,.035), 0 0 0 96px rgba(41,93,75,.022);
+}
+.welcome p, .welcome span { color: #65766c; }
+.welcome .primary { background: #28705a; color: white; }
+.welcome .primary:hover { background: #205e4b; }
+
+.panel, .stats article, .catalog-card, .filters, .tabs,
+.loan-form, .guide, .scan-card {
+  border-color: var(--border);
+  border-radius: 17px;
+  background: #fffdfa;
+  box-shadow: 0 7px 22px rgba(91,72,45,.055);
+}
+.panel-head h3, .section-tools h2, .catalog-body h3,
+.quick h3, .guide h3 { color: #294238; }
+.stats article { padding: 19px; }
+.stat-icon { border-radius: 13px; }
+.stat-icon.blue { background: #e4efe8; color: #28705a; }
+.stat-icon.green { background: #e1f0e7; color: #28705a; }
+.stat-icon.orange { background: #f8ead0; color: #a66a18; }
+.stat-icon.red { background: #f8e2df; color: #b5484f; }
+.request-row:hover, tbody tr:hover { background: #faf6ef; }
+.asset-mini, .date { border-radius: 12px; background: #ecf3ee; color: #2b6854; }
+
+.primary, .approve { background: #28705a; border-radius: 11px; }
+.primary:hover, .approve:hover { background: #205e4b; }
+.secondary, .filter { border-radius: 11px; background: #fffdfa; }
+.secondary:hover, .filter:hover { background: #f7f1e7; border-color: #d7c9b7; }
+.filter.active { background: #e4efe8; border-color: #bdd4c8; color: #28604d; }
+.text-btn { color: #28705a; }
+.quick-actions a { border-radius: 13px; background: #faf6ef; border-color: var(--border); }
+.quick-actions a:hover { background: #f3eadc; border-color: #d5c3ab; }
+.quick-actions > a > span { background: #e4efe8; color: #28705a; border-radius: 11px; }
+
+input, select, textarea, .searchbox {
+  border-color: #ded3c5;
+  border-radius: 11px;
+  background: #fffefb;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #4c8a75;
+  box-shadow: 0 0 0 3px rgba(40,112,90,.13);
+}
+.type-switch label > div { border-radius: 14px; background: #fffdfa; }
+.type-switch input:checked + div { border-color: #74a38f; background: #eef5f0; }
+.step-badge, .info-box { background: #edf4ef; color: #28604d; border-radius: 11px; }
+.tabs button.active { color: #28705a; border-color: #28705a; }
+thead th { background: #f7f1e8; color: #5b685f; }
+.table-wrap { border-radius: 13px; }
+
+.pill.menunggu, .pill.dipesan { background: #fff0d2; color: #97600e; }
+.pill.disetujui, .pill.tersedia, .pill.baik, .pill.dikembalikan { background: #e2f1e8; color: #28654f; }
+.pill.dipinjam { background: #e7edf5; color: #3d5e7d; }
+.pill.ditolak, .pill.terlambat, .pill.rusak_berat { background: #f9e1df; color: #a63e46; }
+.pill.perawatan, .pill.rusak_ringan { background: #f5ead5; color: #916015; }
+.alert { border-radius: 12px; }
+
+@media (max-width: 800px) {
+  .sidebar-scrim { background: rgba(27,55,46,.58); }
+  .welcome { border-radius: 17px; }
+}
