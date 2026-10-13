@@ -797,3 +797,34 @@ thead th { background: #f7f1e8; color: #5b685f; }
   .sidebar-scrim { background: rgba(27,55,46,.58); }
   .welcome { border-radius: 17px; }
 }
+
+
+/* Navigasi terpisah: sementara dan jangka panjang */
+.nav-group { margin: 3px 0; border-radius: 11px; }
+.nav-group summary {
+  min-height: 43px; display: flex; align-items: center; gap: 11px;
+  padding: 9px 11px; border: 1px solid transparent; border-radius: 11px;
+  color: #d2dfd9; font-size: 13px; font-weight: 700; cursor: pointer; list-style: none;
+}
+.nav-group summary::-webkit-details-marker { display: none; }
+.nav-group summary > span { width: 22px; color: #a9c2b7; text-align: center; font-size: 17px; }
+.nav-group summary > i { margin-left: auto; font-style: normal; transition: transform .18s ease; }
+.nav-group[open] summary { background: rgba(244,218,165,.12); color: #fff; }
+.nav-group[open] summary > i { transform: rotate(180deg); }
+.nav-group > div { display: grid; gap: 2px; padding: 4px 0 7px 20px; }
+.nav-sub {
+  min-height: 35px; display: flex; align-items: center; padding: 7px 10px 7px 14px;
+  border-left: 1px solid rgba(255,255,255,.15); color: #bdcec6;
+  text-decoration: none; font-size: 12px; border-radius: 0 8px 8px 0;
+}
+.nav-sub:hover, .nav-sub.active { background: rgba(255,255,255,.07); color: #fff; }
+.nav-sub.active { border-left: 2px solid #efbd5f; background: rgba(239,189,95,.13); }
+.nav-sub b {
+  min-width: 19px; margin-left: auto; padding: 2px 6px; border-radius: 12px;
+  background: #efbd5f; color: #254d40; font-size: 9px; text-align: center;
+}
+.nav-divider {
+  padding: 16px 11px 5px; color: #8eb2a4; font-size: 9px;
+  font-weight: 900; letter-spacing: .14em;
+}
+@media (max-width:800px) { .nav-group summary { min-height: 45px; } }
