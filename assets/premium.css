@@ -832,3 +832,82 @@ thead th { background: #f7f1e8; color: #5b685f; }
 .scope-form { display:flex; align-items:center; gap:6px; min-width:220px; }
 .scope-form select { min-width:142px; min-height:34px; padding:6px 28px 6px 9px; font-size:11px; }
 .scope-form button { min-height:34px; padding:6px 9px; font-size:10px; }
+
+
+/* Dropdown jenis peminjaman aktif */
+.loan-mode {
+  margin: 15px 0 9px;
+}
+.loan-mode > label {
+  display: block;
+  margin: 0 8px 7px;
+  color: #b7d0c5;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+.loan-mode-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 45px;
+  padding-left: 12px;
+  border: 1px solid #efbd5f;
+  border-radius: 11px;
+  background: rgba(255,255,255,.10);
+  box-shadow: 0 0 0 1px rgba(239,189,95,.08);
+}
+.loan-mode-select > span {
+  width: 23px;
+  flex: 0 0 23px;
+  color: #f4ca77;
+  font-size: 17px;
+  text-align: center;
+}
+.loan-mode-select select {
+  width: 100%;
+  min-height: 43px;
+  padding: 8px 32px 8px 8px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.loan-mode-select select option {
+  background: #214f42;
+  color: #fff;
+}
+.nav-current {
+  display: grid;
+  gap: 4px;
+  padding: 3px 0 7px;
+  border-bottom: 1px solid rgba(255,255,255,.11);
+}
+.sidebar .nav-item {
+  color: #e2ece7;
+}
+.sidebar .nav-item > span {
+  color: #b7d0c5;
+}
+.sidebar .nav-item:hover {
+  background: rgba(255,255,255,.10);
+  color: #fff;
+}
+.sidebar .nav-item.active {
+  background: rgba(239,189,95,.18);
+  border-color: rgba(239,189,95,.38);
+  color: #fff;
+}
+.sidebar .nav-item.active > span {
+  color: #ffd985;
+}
+.nav-divider {
+  color: #b7d0c5;
+}
+@media (max-width:800px) {
+  .loan-mode { margin-top: 12px; }
+  .loan-mode-select select { font-size: 13px; }
+}
