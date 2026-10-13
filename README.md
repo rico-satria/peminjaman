@@ -2,6 +2,10 @@
 
 Aplikasi dinamis PHP–MySQL untuk peminjaman aset sementara dan jangka panjang.
 
+## Pemisahan jenis peminjaman
+
+Sidebar memisahkan seluruh alur menjadi **Peminjaman Sementara** dan **Peminjaman Jangka Panjang**. Setiap kelompok mempunyai katalog, formulir pengajuan, riwayat, persetujuan, dan serah terima sendiri. Kolom `assets.loan_scope` menentukan apakah aset tersedia untuk `sementara`, `jangka_panjang`, `keduanya`, atau `tidak_dipinjamkan`. Instalasi lama dimigrasikan otomatis tanpa menghapus transaksi.
+
 ## Konfigurasi
 
 Salin `config.example.php` menjadi `config.php`, lalu isi koneksi database sesuai lingkungan server. `config.php` sengaja tidak disimpan di Git agar password database tidak ikut terunggah.
