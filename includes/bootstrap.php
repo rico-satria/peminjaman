@@ -53,6 +53,17 @@ try {
         '<h2>Database belum siap</h2><p>Jalankan <a href="install.php">install.php</a> terlebih dahulu.</p>'
     );
 }
+// Migrasi ringan: memisahkan aset peminjaman sementara dan jangka panjang.
+try {
+    $scopeColumn = $pdo->query("SHOW COLUMNS FROM assets LIKE 'loan_scope'")->fetch();
+    if (!$scopeColumn) {
+        $pdo->exec("ALTER TABLE assets ADD loan_scope ENUM('sementara','jangka_panjang','keduanya','tidak_dipinjamkan') NOT NULL DEFAULT 'sementara' AFTER availability");
+        $pdo->exec("UPDATE assets SET loan_scope='jangka_panjang' WHERE category IN ('Laptop','Komputer','Printer')");
+    }
+} catch (Throwable $e) {
+    http_response_code(503);
+    die("<h2>Pembaruan database belum selesai</h2><p>Akun database memerlukan izin ALTER untuk menambahkan klasifikasi jenis peminjaman.</p>");
+}
 function e(?string $v): string
 {
     return htmlspecialchars($v ?? "", ENT_QUOTES, "UTF-8");
