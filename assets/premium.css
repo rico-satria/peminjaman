@@ -828,3 +828,7 @@ thead th { background: #f7f1e8; color: #5b685f; }
   font-weight: 900; letter-spacing: .14em;
 }
 @media (max-width:800px) { .nav-group summary { min-height: 45px; } }
+
+.scope-form { display:flex; align-items:center; gap:6px; min-width:220px; }
+.scope-form select { min-width:142px; min-height:34px; padding:6px 28px 6px 9px; font-size:11px; }
+.scope-form button { min-height:34px; padding:6px 9px; font-size:10px; }
