@@ -1036,3 +1036,51 @@ thead th { background: #f7f1e8; color: #5b685f; }
     font-size: 13px;
   }
 }
+
+
+/* Koreksi dropdown sidebar: hilangkan gaya global details yang membuatnya berlebih */
+.sidebar .loan-mode-dropdown {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
+  line-height: normal;
+  box-sizing: border-box;
+}
+.sidebar .loan-mode-dropdown > summary {
+  min-width: 0;
+  padding: 8px 9px;
+  gap: 6px;
+}
+.sidebar .loan-mode-dropdown > summary strong {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 11px;
+}
+.sidebar .loan-mode-icon {
+  width: 21px;
+  flex-basis: 21px;
+}
+.sidebar .loan-mode-menu {
+  background: #214f42;
+  border-color: rgba(239,189,95,.34);
+}
+.sidebar .loan-mode-menu a {
+  color: #f3f7f5;
+}
+.sidebar .loan-mode-menu a > span {
+  color: #f4ca77;
+}
+.sidebar .loan-mode-menu a.active {
+  background: rgba(239,189,95,.18);
+  color: #fff;
+}
+.sidebar .loan-mode-menu a:hover,
+.sidebar .loan-mode-menu a:focus-visible,
+.sidebar .loan-mode-menu a.active:hover,
+.sidebar .loan-mode-menu a.active:focus-visible {
+  background: #28705a;
+  color: #fff;
+}
