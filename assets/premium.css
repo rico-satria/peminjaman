@@ -911,3 +911,128 @@ thead th { background: #f7f1e8; color: #5b685f; }
   .loan-mode { margin-top: 12px; }
   .loan-mode-select select { font-size: 13px; }
 }
+
+
+/* Dropdown kustom: lebar penuh dan hover hijau */
+.loan-mode {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+.loan-mode-label {
+  display: block;
+  margin: 0 8px 7px;
+  color: #b7d0c5;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+.loan-mode-dropdown {
+  position: relative;
+  width: 100%;
+}
+.loan-mode-dropdown > summary {
+  width: 100%;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 11px;
+  box-sizing: border-box;
+  border: 1px solid #efbd5f;
+  border-radius: 11px;
+  background: rgba(255,255,255,.10);
+  color: #fff;
+  cursor: pointer;
+  list-style: none;
+  box-shadow: 0 0 0 1px rgba(239,189,95,.08);
+}
+.loan-mode-dropdown > summary::-webkit-details-marker {
+  display: none;
+}
+.loan-mode-icon {
+  width: 23px;
+  flex: 0 0 23px;
+  color: #f4ca77;
+  font-size: 17px;
+  text-align: center;
+}
+.loan-mode-dropdown > summary strong {
+  min-width: 0;
+  overflow: hidden;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.loan-mode-arrow {
+  margin-left: auto;
+  color: #d7e5df;
+  transition: transform .18s ease;
+}
+.loan-mode-dropdown[open] .loan-mode-arrow {
+  transform: rotate(180deg);
+}
+.loan-mode-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  z-index: 80;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 11px;
+  background: #fffdfa;
+  box-shadow: 0 14px 30px rgba(14,45,36,.28);
+}
+.loan-mode-menu a {
+  width: 100%;
+  min-height: 39px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 9px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  color: #294238;
+  font-size: 12px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: background-color .15s ease, color .15s ease;
+}
+.loan-mode-menu a > span {
+  width: 22px;
+  flex: 0 0 22px;
+  color: #4f7466;
+  font-size: 16px;
+  text-align: center;
+}
+.loan-mode-menu a:hover,
+.loan-mode-menu a:focus-visible {
+  background: #28705a;
+  color: #fff;
+  outline: 0;
+}
+.loan-mode-menu a:hover > span,
+.loan-mode-menu a:focus-visible > span {
+  color: #f6d48d;
+}
+.loan-mode-menu a.active {
+  background: #e4efe8;
+  color: #205e4b;
+}
+.loan-mode-menu a.active:hover,
+.loan-mode-menu a.active:focus-visible {
+  background: #28705a;
+  color: #fff;
+}
+@media (max-width:800px) {
+  .loan-mode-dropdown > summary strong,
+  .loan-mode-menu a {
+    font-size: 13px;
+  }
+}
